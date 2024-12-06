@@ -41,5 +41,20 @@ namespace WPFNotepad.Models
                 isWrapped = value == TextWrapping.Wrap? true : false;
             }
         }
+
+        private bool _isWrapped;
+        public bool isWrapped
+        {
+            get { return _isWrapped; }
+            set { OnPropertyChanged(ref _isWrapped, value); }
+        }
+
+        private double _size;
+        public double Size
+        {
+            get { return _size; }
+            set { OnPropertyChanged(ref _size, value); }
+        }
+
     }
 }
