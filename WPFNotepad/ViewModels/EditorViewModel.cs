@@ -19,6 +19,8 @@ namespace WPFNotepad.ViewModels
         {
             Document = document;
             Format = new FormatModel();
+            formatCommand = new RelayCommand(OpenStyleDialog);
+            wrapCommand = new RelayCommand(ToggleWrap);
         }
 
         private void OpenStyleDialog()
@@ -30,7 +32,7 @@ namespace WPFNotepad.ViewModels
         private void ToggleWrap()
         {
             if (Format.Wrap == System.Windows.TextWrapping.Wrap)
-                Format.Wrap == System.Windows.TextWrapping.NoWrap;
+                _ = Format.Wrap == System.Windows.TextWrapping.NoWrap;
             else
                 Format.Wrap == System.Windows.TextWrapping.Wrap;
         }
