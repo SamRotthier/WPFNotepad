@@ -25,8 +25,9 @@ namespace WPFNotepad.ViewModels
 
         private void OpenStyleDialog()
         {
-            //TODO
-            throw new NotImplementedException();
+            var fontDialog = new FontDialog();
+            fontDialog.DataContext = Format;
+            fontDialog.ShowDialog();
         }
 
         private void ToggleWrap()
