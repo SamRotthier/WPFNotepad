@@ -4,9 +4,45 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFNotepad"
+        xmlns:viewmodels="clr-namespace:WPFNotepad.ViewModels"
         mc:Ignorable="d"
         Title="WPF Notepad" Height="400" Width="525">
-    <Grid>
-
-    </Grid>
+    <Window.DataContext>
+        <viewmodels:MainViewModel/>
+    </Window.DataContext>
+    <DockPanel Margin="1">
+        <Menu DockPanel.Dock="Top">
+            <Menu.Items>
+                <MenuItem Header="File" Click="MenuItem_Click">
+                    <MenuItem Header="New"/>
+                    <MenuItem Header="Open"/>
+                    <MenuItem Header="Save"/>
+                    <MenuItem Header="Save As"/>
+                </MenuItem>
+                <MenuItem Header="Format">
+                    <MenuItem Header="Format"/>
+                    <MenuItem Header="Word wrap"/>
+                </MenuItem>
+                <MenuItem Header="Help">
+                    <MenuItem Header="About"/>
+                </MenuItem>
+            </Menu.Items>
+        </Menu>
+        <DockPanel>
+            <TextBlock DockPanel.Dock="Bottom"
+                       DataContext="{Binding File.Document}"
+                       Text="{Binding FilePath}"/>
+            <TextBox DockPanel.Dock="Top"
+                     VerticalScrollBarVisibility="Visible"
+                     DataContext="{Binding Editor}"
+                     FontFamily="{Binding Format.Family}"
+                     FontSize="{Binding Format.Size}"
+                     FontStyle="{Binding Format.Style}"
+                     FontWeight="{Binding Format.Weight}"
+                     TextWrapping="{Binding Format.Wrap}"
+                     AcceptsReturn="True"
+                     AcceptsTab="True"
+                     Text="{Binding Document.Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </DockPanel>
+    </DockPanel>
 </Window>

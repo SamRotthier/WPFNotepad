@@ -20,5 +20,15 @@ namespace WPFNotepad
         {
             InitializeComponent();
         }
+
+        private void MenuItem_Click()
+        {
+
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
