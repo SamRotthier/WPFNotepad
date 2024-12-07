@@ -32,9 +32,9 @@ namespace WPFNotepad.ViewModels
         private void ToggleWrap()
         {
             if (Format.Wrap == System.Windows.TextWrapping.Wrap)
-                _ = Format.Wrap == System.Windows.TextWrapping.NoWrap;
+                Format.Wrap = System.Windows.TextWrapping.NoWrap;
             else
-                Format.Wrap == System.Windows.TextWrapping.Wrap;
+                Format.Wrap = System.Windows.TextWrapping.Wrap;
         }
     }
 }
