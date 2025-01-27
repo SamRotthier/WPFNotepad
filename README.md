@@ -1,6 +1,6 @@
 In this project I made a Notepad with C# and WPF.
 
-There is no code behind in this application. This means that there is no direct connection from the code behinde(screen) to the code, like no events (button click events,...).
+There is no code behind in this application. This means that there is no direct connection from the code behind(screen) to the code, like no events (button click events,...).
 The MVVM Design pattern is used to make this happen.
 
 Features:
